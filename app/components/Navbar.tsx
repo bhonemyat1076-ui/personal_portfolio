@@ -27,7 +27,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80 transition-colors duration-300">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+        <Link href="/" className="text-xl font-bold tracking-tight text-cyan-600 dark:text-cyan-200">
           Min Chit Thu
         </Link>
 
@@ -58,6 +58,9 @@ export function Navbar() {
             ) : (
               <FontAwesomeIcon icon={faMoon} className="h-4 w-4 text-cyan-300 dark:text-cyan-400" />
             )}
+          </button>
+          <button className="hidden md:inline-flex items-center gap-2 rounded-lg bg-cyan-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-cyan-700 transition-colors">
+            Resume
           </button>
         </div>
       </div>
