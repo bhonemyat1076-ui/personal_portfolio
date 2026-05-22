@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 export function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Prevent layout shift/mismatch until the theme resolves on client side
@@ -48,12 +48,12 @@ export function Navbar() {
 
           {/* Theme Toggle Button */}
           <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
             aria-label="Toggle Theme"
             className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 text-zinc-600 shadow-sm transition-all hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
           >
             {/* Show icons using FontAwesome component */}
-            {mounted && theme === "dark" ? (
+            {mounted && resolvedTheme === "dark" ? (
               <FontAwesomeIcon icon={faSun} className="h-4 w-4 text-amber-500" />
             ) : (
               <FontAwesomeIcon icon={faMoon} className="h-4 w-4 text-cyan-300 dark:text-cyan-400" />
