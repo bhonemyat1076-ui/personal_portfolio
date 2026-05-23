@@ -5,18 +5,20 @@ import Typewriter from "./components/TypeWriter";
 
 export default function Home() {
   return (
-    <section className="flex flex-col min-h-auto justify-center bg-background transition-colors duration-300">
-      <div id="home" className="mx-auto flex max-w-8xl flex-col-reverse justify-between 
-      gap-24 md:flex-row bg-amber-70 
+    <section className="flex flex-col min-h-[calc(var(--vh)*100)] pb-16 justify-center items-stretch 
+    mx-12 bg-background transition-colors duration-300">
+      <div id="home" className="flex flex-col justify-between 
+      gap-24 sm:gap-4 md:flex-row bg-amber-70 w-full py-16
       dark:bg-slate-800 mt-4 py-8x px-16 solid-block transition-shadow duration-300">
 
         {/* Left Side: Text Introduction */}
-        <div className="text-center mx-8 space-y-4 space-x-4 max-w-xl md:text-left py-16">
+        <div className="text-center mx-8 space-y-4 space-x-4 max-w-xl md:text-left py-16 sm:py-4">
 
           <p className="text-lg py-2 leading-relaxed text-zinc-600 dark:text-zinc-400">
             Hello, I'm
           </p>
-          <h1 className="text-4xl font-extrabold font-mono tracking-tight text-cyan-600 dark:text-cyan-200 sm:text-5xl">
+          <h1 className="text-4xl font-extrabold font-mono tracking-tight
+           text-cyan-600 dark:text-cyan-200 sm:text-5xl">
             Min Chit Thu
           </h1>
           <Typewriter />
@@ -29,13 +31,15 @@ export default function Home() {
           <div className="pt-4 flex flex-wrap justify-center gap-4 md:justify-start">
             <a
               href="#projects"
-              className="bg-zinc-900 solid-block px-5 py-2.5 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-200 transition-colors"
+              className="bg-zinc-900 solid-block px-5 py-2.5 text-sm font-medium text-white
+               hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-200 transition-colors"
             >
               View My Projects
             </a>
             <a
               href="#contact"
-              className="solid-block border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              className="solid-block border border-zinc-200 bg-white px-5 py-2.5 text-sm 
+              font-medium text-zinc-950 hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:bg-zinc-800 transition-colors"
             >
               Contact Me
             </a>
@@ -49,23 +53,23 @@ export default function Home() {
         </div>
       </div>
       {/* About Me Section */}
-      <div id="about" className="mx-12 flex flex-col justify-center max-w-8xl gap-12 transition-shadow duration-300">
+      <div id="about" className="flex flex-col justify-center mt-2 w-full gap-12 items-stretch transition-shadow duration-300">
         <h1 className="text-3xl font-bold text-center mt-8 text-cyan-900 dark:text-cyan-50">
           About Me
         </h1>
-        <div className="flex flex-row items-start gap-6">
-          <div className="flex justify-between h-full flex-col gap-6">
-            <div className="px-4 py-2 flex justify-center flex-col items-start solid-block bg-amber-70
-             dark:bg-slate-800 max-w-2xl w-full">
+        <div className="flex flex-row justify-between items-stretch w-full gap-12">
+          <div className="flex justify-between flex-col">
+            <div className="px-12 py-4 flex justify-center flex-col items-start solid-block bg-amber-70
+             dark:bg-slate-800 w-full">
               <h3 className="text-2xl font-semibold text-center mb-4 text-cyan-700 dark:text-cyan-300">
-                Who I Am and <span>&lt; / &gt;</span>
+                Who I Am and <span className="font-mono text-green-500 bold">&lt;/&gt;</span>
               </h3>
               <p className="text-md leading-relaxed text-zinc-600 dark:text-zinc-400 mx-auto text-start">
-                I'm a software developer with a passion for creating efficient and scalable web applications. 
+                I'm a software developer with a passion for creating efficient and scalable web applications.
               </p>
             </div>
-            <div className="px-4 py-2 flex justify-center flex-col items-start solid-block bg-amber-70
-             dark:bg-slate-800 max-w-2xl w-full">
+            <div className="px-12 py-4 flex justify-center flex-col items-start solid-block bg-amber-70
+             dark:bg-slate-800 w-full">
               <h3 className="text-2xl font-semibold text-center mb-4 text-cyan-700 dark:text-cyan-300">
                 My Journey in Software Development
               </h3>
@@ -82,7 +86,8 @@ export default function Home() {
             width={500}
             height={500}
             className="object-cover solid-block w-full 
-            bg-amber-70 dark:bg-slate-800 max-w-md mx-auto transition-transform duration-300 hover:scale-105"
+            bg-amber-70 dark:bg-slate-800 max-w-md transition-transform
+             duration-300 hover:scale-105 hidden sm:block max-w-[280px] md:max-w-[420px] lg:max-w-[460px]"
           />
         </div>
       </div>

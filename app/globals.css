@@ -6,6 +6,7 @@
 :root {
   --background: #fcf9e8;
   --foreground: #171717;
+  --vh: 1vh;
 }
 
 html.dark {
@@ -17,6 +18,8 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   background: var(--background);
   color: var(--foreground);
+  /* Use the dynamic viewport unit to avoid content being hidden by the OS taskbar or mobile UI */
+  min-height: calc(var(--vh) * 100);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
