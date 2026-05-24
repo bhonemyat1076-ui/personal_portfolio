@@ -27,3 +27,47 @@ body {
   box-shadow: 6px 6px 0 black;
   border: 3px solid rgba(0, 0, 0, 0.05);
 }
+
+@theme {
+  @keyframes horizontal-loop {
+    /* 1. Card starts perfectly in focus at the center */
+    0% { 
+      transform: translateX(0) scale(1); 
+      opacity: 1; 
+      z-index: 30; 
+    }
+    /* 2. Moves smoothly off-screen to the LEFT */
+    25% { 
+      transform: translateX(-120%) scale(0.9); 
+      opacity: 0; 
+      z-index: 20; 
+    }
+    /* 3. Teleports instantly to the far RIGHT while completely invisible */
+    26% { 
+      transform: translateX(120%) scale(0.8); 
+      opacity: 0; 
+      z-index: 10; 
+    }
+    /* 4. Slides back into the background waiting queue from the right */
+    50% { 
+      transform: translateX(30%) scale(0.85); 
+      opacity: 0.4; 
+      z-index: 10; 
+    }
+    /* 5. Slides into secondary focus position just behind the main card */
+    75% { 
+      transform: translateX(15%) scale(0.92); 
+      opacity: 0.7; 
+      z-index: 20; 
+    }
+    /* 6. Returns seamlessly to the center front */
+    100% { 
+      transform: translateX(0) scale(1); 
+      opacity: 1; 
+      z-index: 30; 
+    }
+  }
+
+  /* Define the animation class name */
+  --animate-card-loop: horizontal-loop 12s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
