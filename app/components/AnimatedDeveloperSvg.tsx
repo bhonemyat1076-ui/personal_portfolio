@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 
-export function AnimatedDeveloperSvg() {
+export const AnimatedDeveloperSvg = memo(function AnimatedDeveloperSvg() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -31,6 +31,7 @@ export function AnimatedDeveloperSvg() {
           height={500}
           priority
           className="w-full h-auto object-contain transition-opacity duration-500 animate-fade-in opacity-90"
+          sizes="(max-width: 768px) 100vw, 500px"
         />
       ) : (
         /* Light Mode Illustration */
@@ -41,8 +42,9 @@ export function AnimatedDeveloperSvg() {
           height={500}
           priority
           className="w-full h-auto object-contain transition-opacity duration-500 animate-fade-in"
+          sizes="(max-width: 768px) 100vw, 500px"
         />
       )}
     </div>
   );
-}
+});

@@ -1,5 +1,7 @@
 // components/ImageStack.tsx
+"use client";
 import Image from 'next/image';
+import { memo } from 'react';
 
 const images = [
   { src: '/card-system-1.png', alt: 'Project-Image 1' },
@@ -7,7 +9,7 @@ const images = [
   { src: '/card-system-3.png', alt: 'Project-Image 3' },
 ];
 
-export default function ImageStack() {
+const ImageStack = memo(function ImageStack() {
   return (
     // Outer container: Controls the overall block height (e.g., h-96 or h-[500px])
     <div className="flex items-center justify-center h-96 bg-amber-70 dark:bg-slate-800 w-full">
@@ -18,7 +20,7 @@ export default function ImageStack() {
         
         {images.map((img, i) => (
           <div
-            key={i}
+            key={img.src}
             // CHANGE 1: Added 'flex items-center justify-center' here so the inner card is centered
             className="absolute w-full h-full flex items-center justify-center animate-card-loop group-hover:[animation-play-state:paused] transition-transform duration-300 hover:!scale-105"
             style={{
@@ -35,6 +37,7 @@ export default function ImageStack() {
                 // or keep object-cover if you want it to bleed to the edges perfectly.
                 className="object-contain" 
                 priority={i === 0}
+                sizes="(max-width: 768px) 100vw, 700px"
               />
             </div>
           </div>
@@ -43,4 +46,6 @@ export default function ImageStack() {
       </div>
     </div>
   );
-}
+});
+
+export default ImageStack;

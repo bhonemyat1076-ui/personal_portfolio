@@ -1,31 +1,34 @@
 import Image from "next/image";
 import { AnimatedDeveloperSvg } from "./components/AnimatedDeveloperSvg";
 import Typewriter from "./components/TypeWriter";
-import ImageStack from "./components/ImageStack";
 import ProjectsSection from "./components/ProjectsSection";
+import SkillsSection from "./components/SkillsSection";
 
 export default function Home() {
   return (
-    <div>
-      {/* Home Section */}
-      <section id="home" className="flex flex-col justify-center items-stretch mx-12 mb-6 bg-background transition-colors duration-300">
-        <div className="flex flex-col justify-between gap-24 sm:gap-4 md:flex-row bg-amber-70 w-full py-16 dark:bg-slate-800 mt-4 px-16 solid-block transition-shadow duration-300">
+    <div className="space-y-16 bg-background text-foreground transition-colors duration-300">
 
-          {/* Left Side: Text Introduction */}
-          <div className="text-center mx-8 space-y-4 space-x-4 max-w-xl md:text-left py-16 sm:py-4">
-            <p className="text-lg py-2 leading-relaxed text-zinc-600 dark:text-zinc-400">
+      {/* 1. Hero / Home Section */}
+      <section id="home" className="px-6 md:px-12 pt-6">
+        {/* Main interactive row frame */}
+        {/* Cleaned layout container: Swapped justify-between for items-center and added uniform theme colors */}
+        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-16 bg-zinc-50 border border-zinc-200 p-8 sm:p-12 md:p-16 dark:bg-slate-900/50 dark:border-zinc-800 mt-4 solid-block transition-all duration-300">
+
+          {/* Left Side: Text Introduction (Removed the conflicting py-16 / sm:py-4 paddings) */}
+          <div className="flex-1 text-center space-y-4 max-w-xl md:text-left">
+            <p className="text-lg leading-relaxed text-zinc-500 dark:text-zinc-400">
               Hello, I'm
             </p>
-            <h1 className="text-4xl font-extrabold font-mono tracking-tight text-cyan-600 dark:text-cyan-200 sm:text-5xl">
+            <h1 className="text-4xl font-extrabold font-mono tracking-tight text-cyan-600 dark:text-cyan-400 sm:text-5xl">
               Min Chit Thu
             </h1>
-            <Typewriter />
-            <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+             <Typewriter />
+            <p className="text-base sm:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
               a passionate software developer specializing in building web applications.
               Explore my projects and skills below!
             </p>
 
-            {/* Optional Call to Action Buttons */}
+            {/* Call to Action Buttons */}
             <div className="pt-4 flex flex-wrap justify-center gap-4 md:justify-start">
               <a
                 href="#projects"
@@ -42,55 +45,77 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Side: Animated Illustration */}
-          <div className="w-full max-w-[280px] sm:max-w-[360px] md:max-w-[420px] lg:max-w-[460px] mx-8">
+          {/* Right Side: Animated Illustration Container */}
+          <div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px] lg:max-w-[440px] flex justify-center">
             <AnimatedDeveloperSvg />
           </div>
         </div>
       </section>
 
-      {/* About Me Section */}
-      <section id="about" className="flex flex-col justify-center items-stretch mx-12 mb-6 bg-background transition-colors duration-300">
-        <div className="flex flex-col justify-center mt-2 w-full gap-6 items-stretch transition-shadow duration-300">
-          <h1 className="text-3xl font-bold text-center mt-8 text-cyan-900 dark:text-cyan-50">
+      {/* 2. About Me Section */}
+      <section id="about" className="px-6 md:px-12">
+        <h2 className="text-3xl font-bold text-center mb-8 text-cyan-900 dark:text-cyan-200">
             About Me
-          </h1>
-          <div className="flex flex-row justify-between items-stretch w-full gap-12">
-            <div className="flex justify-between flex-col">
-              <div className="px-12 py-4 flex justify-center flex-col items-start solid-block bg-amber-70 dark:bg-slate-800 w-full">
-                <h3 className="text-2xl font-semibold text-center mb-4 text-cyan-700 dark:text-cyan-300">
-                  Who I Am and <span className="font-mono text-green-500 bold">&lt;/&gt;</span>
+          </h2>
+        <div className="w-full solid-block border border-zinc-200 bg-zinc-50 p-8 sm:p-12 dark:border-slate-900 dark:bg-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+            {/* Content Segment Blocks */}
+            <div className="md:col-span-3 space-y-6">
+              <div className="space-y-2">
+                <h3 className="text-xl font-semibold text-cyan-700 dark:text-cyan-300 flex items-center gap-2">
+                  Who I Am and <span className="font-mono text-green-500 font-bold">&lt;/&gt;</span>
                 </h3>
-                <p className="text-md leading-relaxed text-zinc-600 dark:text-zinc-400 mx-auto text-start">
+                <p className="text-sm sm:text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                   I'm a software developer with a passion for creating efficient and scalable web applications.
                 </p>
               </div>
-              <div className="px-12 py-4 flex justify-center flex-col items-start solid-block bg-amber-70 dark:bg-slate-800 w-full">
-                <h3 className="text-2xl font-semibold text-center mb-4 text-cyan-700 dark:text-cyan-300">
+
+              <div className="space-y-2">
+                <h3 className="text-xl font-semibold text-cyan-700 dark:text-cyan-300">
                   My Journey in Software Development
                 </h3>
-                <p className="text-md leading-relaxed text-zinc-600 dark:text-zinc-400 mx-auto text-start">
+                <p className="text-sm sm:text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                   I started my journey in software development during my college years.
                   Over the years, I've honed my skills in various programming languages and frameworks,
-                  and I've had the opportunity to work on a variety of projects that have challenged and inspired me.
+                  working on projects that have challenged and inspired me.
                 </p>
               </div>
             </div>
-            <Image
-              src="/Programming Computer.svg"
-              alt="About Me Image"
-              width={500}
-              height={500}
-              className="object-cover solid-block w-full bg-amber-70 dark:bg-slate-800 max-w-md transition-transform duration-300 hover:scale-105 hidden sm:block max-w-[280px] md:max-w-[420px] lg:max-w-[460px]"
-            />
+
+            {/* Media Presentation Display */}
+            <div className="md:col-span-2 flex justify-center">
+              <Image
+                src="/Programming Computer.svg"
+                alt="About Me Image"
+                width={400}
+                height={400}
+                className="rounded-xl object-contain max-w-[240px] sm:max-w-[280px] md:max-w-full transition-transform duration-300 hover:scale-102"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 2. Projects Grid and Carousels Section */}
-      <section id="projects" className="flex flex-col justify-center items-stretch mx-12 mb-6 bg-background transition-colors duration-300">
+      {/* 3. Projects Grid Layout Section */}
+      <section id="projects" className="px-6 md:px-12">
         <ProjectsSection />
-      </section >
+      </section>
+
+      {/* 4. Skills Section */}
+      <section id="skills" className="px-6 md:px-12 pb-16">
+          {/* Section Header */}
+      <div className="relative z-10 mb-10 text-center md:text-left w-full max-w-5xl">
+        <h2 className="text-3xl text-center font-bold text-cyan-900 dark:text-cyan-200 tracking-tight">
+          Skills & Technologies
+        </h2>
+        <p className="text-sm text-center sm:text-base mt-2 text-zinc-600 dark:text-zinc-400">
+          My technical stack and tools for building full-stack engineering platforms.
+        </p>
+      </div>
+        <SkillsSection />
+      </section>
+
     </div>
   );
 }

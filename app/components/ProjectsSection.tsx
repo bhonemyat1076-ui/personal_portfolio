@@ -37,7 +37,7 @@ const MY_PORTFOLIO_DATA: ProjectProps[] = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="w-full max-w-5xl mx-auto px-6 py-20">
+    <section id="projects" className="w-full">
       <div className="mb-12 text-center md:text-left">
         <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
           My Projects
