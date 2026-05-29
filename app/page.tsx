@@ -103,7 +103,7 @@ export default function Home() {
       </section>
 
       {/* 4. Skills Section */}
-      <section id="skills" className="px-6 md:px-12 pb-16">
+      <section id="skills" className="px-6 md:px-12">
           {/* Section Header */}
       <div className="relative z-10 mb-10 text-center md:text-left w-full max-w-5xl">
         <h2 className="text-3xl text-center font-bold text-cyan-900 dark:text-cyan-200 tracking-tight">
@@ -114,6 +114,34 @@ export default function Home() {
         </p>
       </div>
         <SkillsSection />
+      </section>
+
+      {/* 5. Contact Section */}
+      <section id="contact" className="px-6 md:px-12 pb-16">
+        <div className="relative z-10 mb-10 text-center md:text-left w-full max-w-5xl">
+          <h2 className="text-4xl text-center font-bold text-cyan-900 dark:text-cyan-200 tracking-tight">
+            Contact Me
+          </h2>
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Image
+              src="/contact.svg"
+              alt="Contact Image"
+              width={300}
+              height={300}
+            />
+            <div className="space-y-4 max-w-md solid-block border rounded-2xl border-zinc-200 bg-zinc-50 p-6 dark:border-slate-900 dark:bg-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="flex flex-row items-center gap-3">
+                <input type="text" placeholder="Your Name" className="bg-transparent border-b border-zinc-300 focus:outline-none focus:border-cyan-500" />
+              </div>
+              <div className="flex flex-row items-center gap-3">
+                <input type="email" placeholder="Your Email" className="bg-transparent border-b border-zinc-300 focus:outline-none focus:border-cyan-500" />
+              </div>
+              <div className="flex flex-row items-center gap-3">
+                <input type="text" placeholder="Your Message" className="bg-transparent border-b border-zinc-300 focus:outline-none focus:border-cyan-500" />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
     </div>
