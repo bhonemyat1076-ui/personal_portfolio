@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import ResumeModal from "./ResumeModal"; // Import the resume modal component
 
 // Import Font Awesome React Component and specific Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { header } from "framer-motion/m";
 
 export function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -23,6 +25,8 @@ export function Navbar() {
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
   ];
+
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80 transition-colors duration-300">
@@ -59,11 +63,17 @@ export function Navbar() {
               <FontAwesomeIcon icon={faMoon} className="h-4 w-4 text-cyan-300 dark:text-cyan-400" />
             )}
           </button>
-          <button className="hidden md:inline-flex items-center gap-2 rounded-lg bg-cyan-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-cyan-700 transition-colors">
+          <button
+            onClick={() => setIsResumeOpen(true)} // Opens the modal on click
+            className="hidden md:inline-flex items-center gap-2 rounded-lg bg-cyan-600 
+        px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-cyan-700 transition-colors"
+          >
             Resume
           </button>
+
         </div>
       </div>
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </header>
   );
 }

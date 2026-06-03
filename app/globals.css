@@ -10,7 +10,7 @@
 }
 
 html.dark {
-  --background: #1d2630;
+  --background: #0f172a;
   --foreground: #ededed;
 }
 
@@ -23,10 +23,15 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-.solid-block {
-  box-shadow: 6px 6px 0 black;
-  border: 3px solid rgba(0, 0, 0, 0.05);
-}
+  .solid-block {
+    box-shadow: 4px 4px 0 #141b21;
+  }
+
+  .solid-block:hover {
+    box-shadow: 8px 8px 0 #334155 !important;
+    transform: translate(-2px, -2px) !important;
+  }
+
 
 @theme {
   @keyframes horizontal-loop {

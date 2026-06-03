@@ -54,7 +54,7 @@ const Typewriter = () => {
   }, [sentenceIndex, charIndex, isDeleting]);
 
   return (
-    <div className="text-lg font-mono">
+    <div className="text-lg font-mono text-zinc-600 dark:text-zinc-400">
       {displayText}
       <span className="animate-pulse">|</span>
     </div>

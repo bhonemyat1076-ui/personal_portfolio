@@ -1,4 +1,5 @@
 import { ProjectCardTemplate, ProjectProps } from "./ProjectCardTemplate";
+import FirstTimeReveal from "./FirstTimeReveal";
 
 const MY_PORTFOLIO_DATA: ProjectProps[] = [
   {
@@ -10,8 +11,8 @@ const MY_PORTFOLIO_DATA: ProjectProps[] = [
       "/card-system-2.png",
       "/card-system-3.png"
     ],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com"
+    liveUrl: "#", // Optional: Add a live demo URL if available
+    githubUrl: "https://github.com/bhonemyat1076-ui/Card-Generator-Project.git"
   },
   {
     title: "Request Ticketing System",
@@ -22,7 +23,8 @@ const MY_PORTFOLIO_DATA: ProjectProps[] = [
       "/Request-ticket-2.png",
       "/Request-ticket-3.png"
     ],
-    githubUrl: "https://github.com"
+      liveUrl: "#",
+    githubUrl: "https://github.com/bhonemyat1076-ui/request_ticket_system.git"
   },
   {
     title: "Personal Portfolio Website",
@@ -31,7 +33,8 @@ const MY_PORTFOLIO_DATA: ProjectProps[] = [
     images: [
       "/Portfolio-img.png"
     ],
-    liveUrl: "https://example.com"
+    liveUrl: "https://bhonemyat1076-ui.vercel.app/",
+    githubUrl: "https://github.com/bhonemyat1076-ui/personal-portfolio.git"
   }
 ];
 
@@ -50,7 +53,9 @@ export default function ProjectsSection() {
       {/* Grid Layout that switches columns automatically based on screen resolution */}
       <div className="flex flex-col gap-6 sm:gap-6 md:gap-8 items-stretch">
         {MY_PORTFOLIO_DATA.map((project, index) => (
-          <ProjectCardTemplate key={index} project={project} />
+          <FirstTimeReveal key={index} storageKey={`project-${index}`}>
+            <ProjectCardTemplate project={project} />
+          </FirstTimeReveal>
         ))}
       </div>
     </section>

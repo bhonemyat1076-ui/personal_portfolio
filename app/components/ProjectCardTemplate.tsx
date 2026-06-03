@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { Icon } from "@iconify/react";
 
 // Define the shape of data our template expects
 export interface ProjectProps {
@@ -47,21 +48,21 @@ export function ProjectCardTemplate({ project }: { project: ProjectProps }) {
     {/* 1. Left Side: Card Metadata Content (Takes up exactly half the width on desktop) */}
     <div className="flex flex-col flex-1 p-6 md:w-1/2 justify-between">
       <div className="space-y-4">
+
+        <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
+          {project.title}
+        </h3>
         {/* Tech Badges */}
         <div className="flex flex-wrap gap-1.5">
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="inline-block px-2.5 py-0.5 rounded-md font-mono text-xs font-medium bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300"
+              className="inline-block px-2.5 py-0.5 rounded-md font-mono text-xs font-medium bg-amber-100 text-zinc-800 dark:bg-slate-600 dark:text-zinc-300"
             >
               {tech}
             </span>
           ))}
         </div>
-
-        <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
-          {project.title}
-        </h3>
         
         <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-prose">
           {project.description}
@@ -75,9 +76,12 @@ export function ProjectCardTemplate({ project }: { project: ProjectProps }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 hover:underline"
+            className="text-xs font-medium text-zinc-900
+            bg-cyan-500 hover:bg-cyan-600 text-white dark:bg-cyan-600 px-3 py-1 rounded-md transition-colors duration-200
+             dark:hover:bg-cyan-400 transition-colors"
           >
-            Live Demo &rarr;
+           <Icon icon="mdi:link" className="inline-block w-6 h-6 mr-1" />
+            Live Demo
           </a>
         )}
         {project.githubUrl && (
@@ -85,8 +89,11 @@ export function ProjectCardTemplate({ project }: { project: ProjectProps }) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            className="text-xs font-medium text-zinc-900
+            bg-cyan-500 hover:bg-cyan-600 text-white dark:bg-cyan-600 px-3 py-1 rounded-md transition-colors duration-200
+             dark:hover:bg-cyan-400 transition-colors"
           >
+            <Icon icon="mdi:github" className="inline-block w-6 h-6 mr-1" />
             Source Code
           </a>
         )}

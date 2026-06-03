@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers"; // Import your provider component
 import { Navbar } from "@/app/components/Navbar"; // Import the navbar we will make in Step 2
+import ScrollToHome from "@/app/components/ScrollToHome"; // Import the scroll-to-top button component
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <ScrollToHome />
         </Providers>
       </body>
     </html>
