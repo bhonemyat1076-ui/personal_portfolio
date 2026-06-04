@@ -42,10 +42,10 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="w-full">
       <div className="mb-12 text-center md:text-left">
-        <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="text-3xl font-bold text-center text-cyan-900 dark:text-cyan-200">
           My Projects
         </h2>
-        <p className="text-base text-zinc-500 dark:text-zinc-400 mt-2">
+        <p className="text-base text-zinc-500 dark:text-zinc-400 mt-2 text-left md:text-center mb-8">
           A showcase of recent engineering applications and custom full-stack solutions.
         </p>
       </div>

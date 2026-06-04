@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 
 export default function ContactEmail() {
-  const emailAddress = "minchitthu1076@gmail.com";
+  const emailAddress = "bhonemyat1076@gmail.com";
   // Track if the clipboard action successfully executed
   const [copied, setCopied] = useState(false);
 

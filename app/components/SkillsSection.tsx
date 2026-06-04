@@ -48,7 +48,6 @@ export default function SkillsSection() {
     { name: "GitHub", category: "Tools", icon: "bi:github", iconColor: "text-zinc-800 dark:text-zinc-100" },
     { name: "Linux", category: "Tools", icon: "logos:ubuntu" },
     { name: "Gemini", category: "Tools", icon: "vscode-icons:file-type-gemini" },
-    { name: "Claude", category: "Tools", icon: "logos:claude-icon" },
   ];
 
   const totalItems = skillsData.length;

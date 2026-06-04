@@ -60,9 +60,12 @@ export default function Home() {
       </section>
       {/* 2. About Me Section */}
       <section id="about" className="px-6 md:px-12">
-        <h2 className="text-3xl font-bold text-center mb-8 text-cyan-900 dark:text-cyan-200">
+        <h2 className="text-3xl font-bold text-center text-cyan-900 dark:text-cyan-200">
           About Me
         </h2>
+        <p className="text-base text-zinc-500 dark:text-zinc-400 mt-2 text-left md:text-center mb-8">
+          A brief introduction to my background, journey, and the skills that define me as a developer.
+        </p>
         <div className="w-full">
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
@@ -167,15 +170,20 @@ export default function Home() {
             className="bg-zinc-800 w-50 text-center solid-block px-5 py-2.5 text-sm font-medium text-zinc-50 dark:text-zinc-800 hover:bg-zinc-700 dark:bg-zinc-200 dark:hover:bg-zinc-300 transition-colors">
               GitHub <Icon icon="mdi:github" className="inline-block w-5 h-5" />
             </a>
-            <a href="https://www.linkedin.com/in/min-chit-thu-1076-ui/" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/min-chit-thu-741aab38b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BLTufNg%2FjTiuebBTdu7vAeA%3D%3D" target="_blank" rel="noopener noreferrer"
             className="bg-blue-600 w-50 text-center solid-block px-5 py-2.5 text-sm font-medium text-zinc-50 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition-colors">
               LinkedIn <Icon icon="mdi:linkedin" className="inline-block w-5 h-5" />
             </a>
           </div>
         </div>
         <hr className="h-[2px] w-full border-0 bg-gradient-to-r from-transparent via-zinc-400 to-transparent opacity-75" />
-        <div className="text-center text-sm text-zinc-500 dark:text-zinc-400 py-4">
+        <div className="flex flex-row justify-around bg-transparent py-2">
+          <div className="text-xs text-zinc-500 dark:text-zinc-400">
           &copy; {new Date().getFullYear()} Min Chit Thu. All rights reserved.
+          </div>
+          <div className="text-xs text-zinc-500 dark:text-zinc-400">
+            Built with Next.js, Tailwind CSS, and ❤️
+          </div>
         </div>
       </footer>
     </div>
