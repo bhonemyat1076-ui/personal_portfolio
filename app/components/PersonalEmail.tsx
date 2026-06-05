@@ -20,7 +20,7 @@ export default function ContactEmail() {
   };
 
   return (
-    <div className="flex items-center gap-3 group/container w-fit">
+    <div className="flex items-center gap-3 group/container w-fit mb-4">
       {/* Your original email layout hyperlink target stream */}
       <a 
         href={`mailto:${emailAddress}`} 
