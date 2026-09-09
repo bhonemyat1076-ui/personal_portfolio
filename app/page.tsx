@@ -160,8 +160,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer className="h-86 w-full bg-radial-[at_top] from-amber-200 to-amber-50 dark:from-slate-800 dark:to-slate-900">
-        <div className="flex flex-col md:flex-row sm:flex-col justify-around items-stretch py-12 mx-12">
+      <footer className="w-full bg-radial-[at_top] from-slate-300 to-slate-100 dark:from-slate-800 dark:to-slate-900">
+        <div className="flex flex-col md:flex-row sm:flex-col justify-around items-stretch py-8 mx-12">
           <div className="flex flex-col items-center justify-center gap-4 text-center md:text-left">
             <h1 className="text-[2rem] md:text-[4rem] sm:text-[3rem] text-black font-bold dark:text-white tracking-tight w-half md:text-left sm:text-center md:mb-0">
               Have an idea? <br />
@@ -180,13 +180,13 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <hr className="h-[2px] w-full border-0 bg-gradient-to-r from-transparent via-zinc-400 to-transparent opacity-75" />
+        <div className="h-[2px] border-0 bg-gradient-to-r from-transparent via-zinc-400 to-transparent opacity-75 mx-18"></div>
         <div className="flex flex-row justify-around bg-transparent py-2">
           <div className="text-xs text-zinc-500 dark:text-zinc-400">
-            &copy; {new Date().getFullYear()} Min Chit Thu. All rights reserved.
+            &copy; {new Date().getFullYear()} Min Chit Thu. <span className="hidden lg:inline">All rights reserved.</span>
           </div>
           <div className="text-xs text-zinc-500 dark:text-zinc-400">
-            Built with Next.js, Tailwind CSS, and ❤️
+            Built with<span className="hidden lg:inline"> Next.js, Tailwind CSS, and</span> ❤️
           </div>
         </div>
       </footer>
