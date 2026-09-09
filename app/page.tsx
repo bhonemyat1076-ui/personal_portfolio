@@ -17,7 +17,7 @@ export default function Home() {
         <FirstTimeReveal storageKey="home-hero">
           {/* Main interactive row frame */}
           {/* Cleaned layout container: Swapped justify-between for items-center and added uniform theme colors */}
-          <div className="w-full border border-zinc-200 bg-zinc-50 p-8 sm:p-12 dark:border-slate-900
+          <div className="w-full border border-zinc-200 bg-zinc-200 p-8 sm:p-12 dark:border-slate-900
         dark:bg-slate-800 solid-block transition-all duration-300 flex flex-col md:flex-row items-center gap-12">
 
             {/* Left Side: Text Introduction (Removed the conflicting py-16 / sm:py-4 paddings) */}
@@ -30,7 +30,7 @@ export default function Home() {
               </h1>
               <Typewriter />
               <p className="text-base sm:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-                a passionate software developer specializing in building web applications.
+                A passionate software developer specializing in building web applications.
                 Explore my projects and skills below!
               </p>
 
@@ -72,9 +72,9 @@ export default function Home() {
             {/* Content Segment Blocks */}
             <div className="md:col-span-3 space-y-6">
               <FirstTimeReveal storageKey="about-me">
-                <div className="space-y-2 solid-block bg-zinc-50 dark:bg-slate-800 transition-all duration-300 hover:border-cyan-500/40 p-6">
+                <div className="space-y-2 solid-block bg-slate-200 dark:bg-slate-800 transition-all duration-300 hover:border-cyan-500/40 p-6">
                   <h3 className="text-xl font-semibold text-cyan-700 dark:text-cyan-300 flex items-center gap-2">
-                    Who I Am and <span className="font-mono text-green-500 font-bold">&lt;/&gt;</span>
+                    Who I Am <span className="font-mono text-green-500 font-bold">&lt;/&gt;</span>
                   </h3>
                   <p className="text-sm leading-relaxed text-black dark:text-white">
                     A Junior Full Stack Developer and IT Administrator focused on clean code and minimalist design. I specialize in building functional web applications using JavaScript, PHP, Laravel, and Tailwind CSS, while ensuring the underlying server infrastructure is rock-solid.
@@ -83,7 +83,7 @@ export default function Home() {
               </FirstTimeReveal>
 
               <FirstTimeReveal storageKey="about-journey">
-                <div className="space-y-2 solid-block bg-zinc-50 dark:bg-slate-800 transition-all duration-300 hover:border-cyan-500/40 p-6">
+                <div className="space-y-2 solid-block bg-slate-200 dark:bg-slate-800 transition-all duration-300 hover:border-cyan-500/40 p-6">
                   <h3 className="text-xl font-semibold text-cyan-700 dark:text-cyan-300">
                     Education and Journey <span className="font-mono text-green-500 font-bold">&lt;/&gt;</span>
                   </h3>
@@ -97,7 +97,7 @@ export default function Home() {
             </div>
 
             {/* Media Presentation Display */}
-            <div className="md:col-span-2 flex justify-center h-full solid-block bg-zinc-50 dark:bg-slate-800 transition-all duration-300 hover:border-cyan-500/40 p-4">
+            <div className="md:col-span-2 flex justify-center h-full solid-block bg-slate-200 dark:bg-slate-800 transition-all duration-300 hover:border-cyan-500/40 p-4">
               <Image
                 src="/Programming Computer.svg"
                 alt="About Me Image"
@@ -146,7 +146,7 @@ export default function Home() {
               height={300}
             />
             <div className="flex items-center justify-center">
-              <div className="w-full max-w-md p-8 bg-zinc-50 dark:bg-slate-800 
+              <div className="w-full max-w-md p-8 bg-slate-200 dark:bg-slate-800 
                solid-block rounded-lg transition-all duration-300 hover:border-cyan-500/40">
                 <h2 className="text-xl font-bold text-center text-cyan-900 dark:text-cyan-200 mb-6">
                   Send a Message

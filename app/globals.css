@@ -4,14 +4,18 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #fcf9e8;
+  --background: #F1F5F9;
   --foreground: #171717;
   --vh: 1vh;
+  --block-shadow: #94a3b8;
+  --block-shadow-hover: #64748b;
 }
 
 html.dark {
   --background: #0f172a;
   --foreground: #ededed;
+  --block-shadow: #141b21;
+  --block-shadow-hover: #334155;
 }
 
 body {
@@ -23,53 +27,60 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-  .solid-block {
-    box-shadow: 4px 4px 0 #141b21;
-  }
+.solid-block {
+  box-shadow: 4px 4px 0 var(--block-shadow);
+  transition: all 0.3s ease;
+}
 
-  .solid-block:hover {
-    box-shadow: 8px 8px 0 #334155 !important;
-    transform: translate(-2px, -2px) !important;
-  }
+.solid-block:hover {
+  box-shadow: 8px 8px 0 var(--block-shadow-hover) !important;
+  transform: translate(-2px, -2px) !important;
+}
 
 
 @theme {
   @keyframes horizontal-loop {
+
     /* 1. Card starts perfectly in focus at the center */
-    0% { 
-      transform: translateX(0) scale(1); 
-      opacity: 1; 
-      z-index: 30; 
+    0% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+      z-index: 30;
     }
+
     /* 2. Moves smoothly off-screen to the LEFT */
-    25% { 
-      transform: translateX(-120%) scale(0.9); 
-      opacity: 0; 
-      z-index: 20; 
+    25% {
+      transform: translateX(-120%) scale(0.9);
+      opacity: 0;
+      z-index: 20;
     }
+
     /* 3. Teleports instantly to the far RIGHT while completely invisible */
-    26% { 
-      transform: translateX(120%) scale(0.8); 
-      opacity: 0; 
-      z-index: 10; 
+    26% {
+      transform: translateX(120%) scale(0.8);
+      opacity: 0;
+      z-index: 10;
     }
+
     /* 4. Slides back into the background waiting queue from the right */
-    50% { 
-      transform: translateX(30%) scale(0.85); 
-      opacity: 0.4; 
-      z-index: 10; 
+    50% {
+      transform: translateX(30%) scale(0.85);
+      opacity: 0.4;
+      z-index: 10;
     }
+
     /* 5. Slides into secondary focus position just behind the main card */
-    75% { 
-      transform: translateX(15%) scale(0.92); 
-      opacity: 0.7; 
-      z-index: 20; 
+    75% {
+      transform: translateX(15%) scale(0.92);
+      opacity: 0.7;
+      z-index: 20;
     }
+
     /* 6. Returns seamlessly to the center front */
-    100% { 
-      transform: translateX(0) scale(1); 
-      opacity: 1; 
-      z-index: 30; 
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+      z-index: 30;
     }
   }
 
